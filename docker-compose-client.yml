@@ -1,0 +1,13 @@
+redis-client:
+   image: relateiq/redis-cli
+   links:
+      - redis-ambassador:redis
+   container_name: client_container
+
+redis-ambassador:
+    image: svendowideit/ambassador
+    expose:
+       - "6379"
+    container_name: client_ambassador
+    environment:
+       - REDIS_PORT_6379_TCP=tcp://192.168.33.10:6379
