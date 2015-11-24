@@ -81,3 +81,7 @@ sudo docker run -p 50100:8080 -d --name dockerimage localhost:5000/hw4:latest
 ```
 * This will remove previous docker image and create a new one with latest copy
 * Run "curl localhost:50100" to see latest changes
+
+
+### Screencast
+This [screencast](https://youtu.be/c1lElH1poSI) demonstrates these 3 tasks
