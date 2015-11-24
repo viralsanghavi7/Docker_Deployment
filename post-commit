@@ -1,0 +1,8 @@
+#!/bin/sh
+GIT_ROOT_WORK_TREE=$ROOT/green-www/ git checkout -f
+sudo docker pull localhost:5000/hw4:latest
+sudo docker stop dockerimage
+sudo docker rm -f dockerimage
+sudo docker rmi localhost:5000/hw4:current
+sudo docker tag localhost:5000/hw4:latest localhost:5000/hw4:current
+sudo docker run -p 50100:8080 -d --name dockerimage localhost:5000/hw4:latest
